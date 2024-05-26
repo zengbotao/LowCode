@@ -23,6 +23,7 @@ const { currentBlockId, blocks } = storeToRefs(appEditorStore)
 const { selectBlock, updateBlocks } = appEditorStore
 
 const applyDrag = <T extends any[]>(arr: T, dragResult: DropResult) => {
+  console.log(arr, dragResult)
   const { removedIndex, addedIndex, payload } = dragResult
 
   const result = [...arr]

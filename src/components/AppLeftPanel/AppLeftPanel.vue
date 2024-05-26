@@ -33,6 +33,10 @@ const toggleDrawer = (drawerMode: DrawerMode = null) => {
         <SmartOptimization size="20" :style="{ lineHeight: 0.7 }" />
       </div>
     </div>
+
+    <!-- 策略模式，显示大纲或者物料组件 -->
+
+    <!-- 侧边栏的显示需要加动画 -->
     <Transition name="app-left-panel-drawer">
       <div v-if="!!isDrawerShown" class="app-left-panel-drawer">
         <div class="app-left-panel-drawer-content">

@@ -19,7 +19,7 @@ const router = createRouter({
               component: () => import('../views/DataSourceContent/DataSourceContent.vue')
             },
             {
-              path: '',
+              path: '', //嵌套路由设置
               redirect: '/app/dataSource/1'
             }
           ]

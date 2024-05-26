@@ -33,6 +33,7 @@ export const SmoothDndContainer = defineComponent({
         this.$emit(eventKey, props)
       }
     }
+    console.log(options)
     const containerElement = this.$refs.container || this.$el
     this.container = smoothDnD(containerElement, options)
   },

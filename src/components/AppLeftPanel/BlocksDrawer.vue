@@ -1,3 +1,9 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2024-05-25 09:05:20
+ * @LastEditTime: 2024-05-26 13:22:18
+-->
 <script setup lang="ts">
 import { blocksBaseMetaList } from '@/constants/blocksBaseMeta'
 import { SmoothDndContainer } from '@/components/SmoothDnd/SmoothDndContainer'
@@ -9,6 +15,7 @@ import { SmoothDndDraggable } from '@/components/SmoothDnd/SmoothDndDraggable'
     <h3 class="drawer-title">组件</h3>
     <!-- <div v-for="d in blocksBaseMetaList" :key="d.type">{{ d.type }}</div> -->
 
+    <!-- 添加组件的拖动效果 -->
     <smooth-dnd-container
       behaviour="copy"
       group-name="blocks"

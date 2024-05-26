@@ -1,8 +1,14 @@
+<!--
+ * @Description: 
+ * @Autor: zengbotao@myhexin.com
+ * @Date: 2024-05-25 09:05:20
+ * @LastEditTime: 2024-05-25 09:16:15
+-->
 <script setup lang="ts">
-import { applyPureReactInVue } from 'veaury'
+// import { applyPureReactInVue } from 'veaury'
 // @ts-ignore
-import ReactDataSource from './react_app/ReactDataSource'
-const RDataSource = applyPureReactInVue(ReactDataSource)
+// import ReactDataSource from './react_app/ReactDataSource'
+// const RDataSource = applyPureReactInVue(ReactDataSource)
 </script>
 <template>
   <div class="data-source-content-wrapper">

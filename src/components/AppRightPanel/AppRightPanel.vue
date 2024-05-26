@@ -4,6 +4,8 @@ import { blocksBaseMeta } from '@/constants/blocksBaseMeta'
 import { useAppEditorStore } from '@/stores/appEditor'
 import { computed } from 'vue'
 import QuoteSetting from './QuoteSetting.vue'
+import ChartSetting from './ChartSetting.vue'
+import type { BlockInfo } from '@/types/block'
 
 const appEditorStore = useAppEditorStore()
 
@@ -18,6 +20,19 @@ const currentBlockInfo = computed(() => {
   if (!appEditorStore.currentBlockId) return null
   return blocksMap.value[appEditorStore.currentBlockId]
 })
+
+const blockSetting = computed(() => {
+  switch (currentBlockInfo.value?.type) {
+    case 'quote': {
+      return QuoteSetting
+    }
+    case 'chart': {
+      return ChartSetting
+    }
+    default:
+      return ''
+  }
+})
 </script>
 
 <template>
@@ -28,11 +43,15 @@ const currentBlockInfo = computed(() => {
       </div>
       <div class="app-right-panel-content">
         <!-- 策略模式渲染？？？ 动态组件-->
-        <!-- <component :is="" /> -->
-        <QuoteSetting
+        <component
+          :is="blockSetting"
+          :blockInfo="currentBlockInfo"
+          @change="(block: BlockInfo) => appEditorStore.updateBlock(block.id, block)"
+        />
+        <!-- <QuoteSetting
           :blockInfo="currentBlockInfo"
           @change="(val) => appEditorStore.updateBlock(currentBlockInfo?.id, val)"
-        />
+        /> -->
         <!-- <div>
           {{ currentBlockInfo.type }}
         </div>
